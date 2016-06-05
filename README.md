@@ -1,4 +1,4 @@
-# trainer
+# Fingerboard Trainer
 
 > A fingerboard training helper
 
