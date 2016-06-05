@@ -1,17 +1,26 @@
 <template>
-  <div id="app">
-    <h1>{{ msg }}</h1>
+  <div id="wrapper">
+    <toolbar></toolbar>
+    <div class="container">
+      <div class="col-sm-12">
+        <router-view
+          class="view"
+          keep-alive>
+        </router-view>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import Toolbar from './Toolbar.vue'
+
 export default {
+  components: {
+    toolbar: Toolbar,
+  },
   data () {
     return {
-      // note: changing this line won't causes changes
-      // with hot-reload because the reloaded component
-      // preserves its current state and we are modifying
-      // its initial state.
       msg: 'Hello Vue!'
     }
   }
