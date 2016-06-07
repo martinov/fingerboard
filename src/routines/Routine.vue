@@ -2,7 +2,7 @@
   <div id="routine-{{ $route.params.id }}">
     <h2>{{ routine.title }} - {{ routine.duration }}</h2>
     <exercise v-for="e in routine.exercises" :exercise="e"></exercise>
-    <!--div class="row">
+    <div class="row">
       <div class="col-sm-2">
         <button class="btn btn-info">Prev</button>
       </div>
@@ -12,7 +12,7 @@
       <div class="col-sm-2" style="text-align:right;">
         <button class="btn btn-md btn-primary next-button" @click="showNextExercise()">Next</button>
       </div>
-    </div-->
+    </div>
   </div>
 </template>
 
@@ -96,7 +96,7 @@ export default {
         {
           num: 10,
           description: 'Dead hang to failure any holds',
-          image: '/static/img/P5309524.JPG',
+          image: '/static/img/routine-1/P5309524.JPG',
           duration: 60,
         }],
       },
