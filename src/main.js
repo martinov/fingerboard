@@ -1,30 +1,14 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import App from './App.vue'
-import RoutinesList from './routines/Index.vue'
-import Routine from './routines/Routine.vue'
+import Vuetify from 'vuetify'
+import App from './App'
+import router from './router'
 
-Vue.use(Router);
+Vue.use(Vuetify)
+Vue.config.productionTip = false
 
-const router = new Router({
-  history: true,
-  saveScrollPosition: true,
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  router,
+  render: h => h(App)
 })
-
-// Pointing routes to the components they should use
-router.map({
-  '/routines': {
-    component: RoutinesList,
-  },
-  '/routines/:id': {
-    name: 'routine',
-    component: Routine,
-  },
-})
-
-// Any invalid route will redirect to home
-router.redirect({
-  '*': '/routines'
-})
-
-router.start(App, '#app')
